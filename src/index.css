@@ -792,6 +792,8 @@ input[type="search"]::-webkit-search-cancel-button {
     p-0
     rounded-3xl
     overflow-hidden
+    h-v-modal
+    lg:h-auto
     ;
   }
   @screen lg{
@@ -819,6 +821,8 @@ input[type="search"]::-webkit-search-cancel-button {
     break-words
     text-justify
     mx-5
+    bg-transparent
+    overflow-scroll
     ;
   }
 }
@@ -1277,6 +1281,17 @@ input[type="search"]::-webkit-search-cancel-button {
     justify-end
     overflow-hidden
     
+    ;
+  }
+}
+@layer components{
+  .exit-modal{
+    @apply
+    bg-maroon-custom
+    p-2
+    rounded-full
+    cursor-pointer
+    flex
     ;
   }
 }
