@@ -1295,3 +1295,9 @@ input[type="search"]::-webkit-search-cancel-button {
     ;
   }
 }
+canvas {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+  will-change: transform;
+  contain: strict;
+}
