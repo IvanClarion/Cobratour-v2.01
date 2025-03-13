@@ -157,7 +157,7 @@ function ControlDashboard() {
               animate={{ opacity:1 }}
               transition={{ duration:0.5 }}
             >
-              <section className='modal-section overflow-hidden '>
+              <section className='modal-section z-10 overflow-hidden '>
                 <div className='modal-control'>
                   <img src={ControlAdd} alt="" className='min-w-72 max-w-80 ' />
                   <label className='text-2xl font-semibold'>Add Contributor</label>
