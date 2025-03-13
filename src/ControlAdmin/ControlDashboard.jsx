@@ -132,7 +132,7 @@ function ControlDashboard() {
             <div className='flex justify-center text-center'>
               <label className='text-xl font-bold mt-5'>Contributors</label>
             </div>
-            <form className='control-form'>
+            <section className='control-form '>
               <img src={SearchIcon} alt="search" className='w-9' />
               <input
                 type='search'
@@ -141,7 +141,7 @@ function ControlDashboard() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-            </form>
+            </section>
             {filteredContributors.map((contributor, index) => (
               <div key={index} className='control-account-list' onClick={() => openAccountView(contributor)}>
                 <img src={AccountProfile} alt="" />
@@ -157,7 +157,7 @@ function ControlDashboard() {
               animate={{ opacity:1 }}
               transition={{ duration:0.5 }}
             >
-              <section className='modal-section overflow-hidden'>
+              <section className='modal-section overflow-hidden '>
                 <div className='modal-control'>
                   <img src={ControlAdd} alt="" className='min-w-72 max-w-80 ' />
                   <label className='text-2xl font-semibold'>Add Contributor</label>
@@ -185,7 +185,7 @@ function ControlDashboard() {
             <div className='flex justify-center text-center'>
               <label className='text-xl font-bold mt-5'>History</label>
             </div>
-            <form className='control-form'>
+            <div className='control-form'>
               <img src={SearchIcon} alt="search" className='w-9' />
               <input
                 type='search'
@@ -195,10 +195,10 @@ function ControlDashboard() {
                 onChange={(e) => setSearchHistoryTerm(e.target.value)}
                 
               />
-            </form>
+            </div>
             {filteredHistory.map((contributor, index) => (
               <div key={index} className='control-account-list justify-between' onClick={() => openHistoryModal(contributor)}>
-                <div className='flex items-center gap-x-5'>
+                <div className='flex items-center break-all gap-x-5'>
                   <img src={HistoryIcon} alt="" />
                   <label>{contributor.email}</label>
                 </div>
@@ -294,9 +294,11 @@ function ControlDashboard() {
           </motion.div>
         )}
         {loading && (
-                    <div className='z-bring-front'>
+                    <section className='z-50'>
+                      <div className='z-bring-front'>
                         <LoadingAnimation />
-                    </div>
+                        </div>
+                    </section>
                 )}
       </section>
     </motion.div>
