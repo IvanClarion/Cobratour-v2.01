@@ -8,13 +8,23 @@ import SocialFacebook from './Icons/fb.svg'
 import SocialInstagram from './Icons/ig.svg'
 import SocialWebsite from './Icons/web.svg'
 import { useState } from 'react'
-import CoryAI from './Cory'
+import CobyProfile from './Images/coby.webp'
+import ExitModal from './Icons/x.svg'
 function ClientHome() {
   const [faq, setfaq] = useState(false)
   const openFaq = ()=>{
     setfaq(prev =>!prev);
    };
+   const [chatBot, setChatBot] = useState(false);
    
+       const openChatBot = (e)=>{
+           e.stopPropagation()
+           setChatBot(true)
+       }
+       const closeChatBot = (e)=>{
+           e.stopPropagation()
+           setChatBot(false)
+       }
   return (
     <motion.div
     initial={{y:10, opacity:0}}
@@ -22,10 +32,25 @@ function ClientHome() {
     viewport={{once:true}}
     transition={{duration:0.5, delay:0.2, ease:easeIn}}
     >
+      
     <section className='min-h-screen overflow-hidden  w-full text-white '>
-      <div>
-        <CoryAI/>
-      </div>
+       {chatBot && (
+               <section className='modal-section  z-50 gap-2 justify-center items-start'>
+               <div className='flex fixed top-0 h-full items-start my-5 gap-2'>
+                    <img src={ExitModal} alt="" className='exit-modal2' onClick={closeChatBot} />
+                   <iframe src='https://interfaces.zapier.com/embed/chatbot/cm7sstze8000tivebfpax0y8v'
+                   style={{height:'90%', width:'350px', borderRadius:'20px'}}
+                  
+                   />
+                  
+               </div>
+               </section>
+                )}
+                {!chatBot && ( 
+                <div className="coby-profile" onClick={openChatBot}>
+                   <img src={CobyProfile} alt="" className='rounded-full' />
+                </div>
+                )}
       <section className=' home-section-layout'>
         <div className='flex flex-col gap-y-5  mx-10 lg:text-left lg:text-sm/8'>
           <span className='mt-40 lg:mt-0'>

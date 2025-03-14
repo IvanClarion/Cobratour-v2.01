@@ -16,10 +16,11 @@ import ControlNavBar from './ControlAdmin/ControlNavbar';
 import ControlDashboard from './ControlAdmin/ControlDashboard';
 import ControlAccount from './ControlAdmin/ControlAccount';
 import ControlLogin from './ControlAdmin/ControlLogin';
-import CoryAI from './Client/Cory';
+
 import ProtectedRoute from './PrivateRoute';
 import ControlSecurity from './PrivateRoutingControl'
 import LoadingAnimation from './LoadingAnimation';
+import CobyAI from './Client/Coby';
 function App() {
   const location = useLocation();
   const isLoginPage = location.pathname === '/adminLogin';
@@ -69,7 +70,7 @@ function App() {
             <Route path="/clientFeedback" element={<ClientFeedback />} />
             <Route path="/clientFaqs" element={<ClientFaqs />} />
             <Route path="/clientExplore" element={<ClientExplore />} />
-            <Route path="/cory" element={<CoryAI />} />
+            <Route path="/clientCoby" element={<CobyAI/>}/>
 
             {/* Admin Login (NOT Protected) */}
             <Route path="/adminLogin" element={<AdminLogin />} />

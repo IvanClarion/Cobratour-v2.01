@@ -1296,3 +1296,33 @@ input[type="search"]::-webkit-search-cancel-button {
     ;
   }
 }
+@layer components{
+  .coby-profile{
+    @apply
+    size-16
+    bg-transparent
+    fixed
+    bottom-0
+    right-0
+    mx-1
+    ;
+  }
+}
+@layer components{
+  .exit-modal2{
+    @apply
+    bg-maroon-custom
+    p-2
+    rounded-full
+    cursor-pointer
+    flex
+    lg:relative
+    md:relative
+    fixed
+    right-0
+    bottom-0
+    m-1
+    z-bring-front
+    ;
+  }
+}
