@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom'
-import { motion, AnimatePresence, easeIn } from "motion/react"
+import { motion, AnimatePresence, easeIn } from 'framer-motion'
 import Isomap from './Images/isomap.svg'
 import DropDown from './Images/dropdown.svg'
 import CtLogo from './Images/ct-logo.svg'
@@ -34,23 +34,35 @@ function ClientHome() {
     >
       
     <section className='min-h-screen overflow-hidden  w-full text-white '>
+    <AnimatePresence>
        {chatBot && (
+        
+        <motion.div
+        initial={{opacity:0, y:10}}
+        animate={{opacity:1 , y:0}}
+        exit={{opacity:0,}}
+        transition={{duration:0.3, delay:0.2}}
+        >
+          
                <section className='modal-section  z-50 gap-2 justify-center items-start'>
-               <div className='flex fixed top-0 h-full items-start my-5 gap-2'>
+               <div className='flex h-full items-start my-5 gap-2'>
                     <img src={ExitModal} alt="" className='exit-modal2' onClick={closeChatBot} />
                    <iframe src='https://interfaces.zapier.com/embed/chatbot/cm7sstze8000tivebfpax0y8v'
                    style={{height:'90%', width:'350px', borderRadius:'20px'}}
-                  
                    />
                   
                </div>
                </section>
+               </motion.div>
+               
                 )}
+      </AnimatePresence>
                 {!chatBot && ( 
                 <div className="coby-profile" onClick={openChatBot}>
                    <img src={CobyProfile} alt="" className='rounded-full' />
                 </div>
                 )}
+      
       <section className=' home-section-layout'>
         <div className='flex flex-col gap-y-5  mx-10 lg:text-left lg:text-sm/8'>
           <span className='mt-40 lg:mt-0'>

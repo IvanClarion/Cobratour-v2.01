@@ -17,7 +17,7 @@ function Coby() {
     <section className='flex h-svh w-svw justify-center items-center'>
         {chatBot && (
         
-        <section className='modal-section -z-50 gap-2 justify-center items-start'>
+        <section className='modal-section  gap-2 justify-center items-start'>
         <div className='flex h-full items-start my-5 gap-2'>
             
             <iframe src='https://interfaces.zapier.com/embed/chatbot/cm7sstze8000tivebfpax0y8v'
