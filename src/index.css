@@ -1327,3 +1327,51 @@ input[type="search"]::-webkit-search-cancel-button {
     ;
   }
 }
+@layer components{
+  .explore-modal-section{
+    
+    @apply
+    
+    bg-modal
+    fixed
+    flex
+    items-center
+    w-full
+    h-full
+    justify-center
+    top-0
+    left-0
+    overflow-hidden
+    
+    ;
+  }
+}
+@layer components{
+  .explore-container{
+    @apply
+    flex
+    flex-col
+    items-center
+    break-words
+    p-2
+    bg-home
+    text-white
+    gap-y-2
+    ;
+  }
+}
+@layer components{
+   .explore-button{
+    @apply
+    px-5
+    py-2
+    size-full
+    lg:size-auto
+    bg-maroon-custom
+    text-white
+    rounded-md
+    text-lg
+    cursor-pointer
+    ;
+   }
+}
