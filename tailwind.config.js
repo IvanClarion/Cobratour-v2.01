@@ -68,6 +68,18 @@ export default {
       }
     },
   },
-  plugins: [],
-}
-
+  plugins: [
+    function({ addUtilities }) {
+      addUtilities({
+        '.image-pixelated': {
+          'image-rendering': 'pixelated',
+          
+        },
+        '.image-optimizeSpeed': {
+          'image-rendering': 'optimizeSpeed',
+          
+        },
+      });
+    },
+  ],
+};

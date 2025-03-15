@@ -6,6 +6,8 @@ import MobileZoom from './Icons/mobile-zoom.svg'
 import PCPanning from './Icons/pc-panning.svg'
 import PCRotate from './Icons/pc-rotate.svg'
 import PCZoom from './Icons/pc-zoom.svg'
+import Settings from './Icons/settings.svg'
+import Tutorial from './Icons/tutorial.svg'
 import { useState } from 'react';
 import {AnimatePresence, motion} from 'framer-motion'
 function ClientExplore() {
@@ -15,10 +17,29 @@ function ClientExplore() {
     e.stopPropagation();
     setTutorial(false)
   }
+  const openTutorial = (e)=>{
+    e.stopPropagation();
+    setTutorial(true)
+  }
   return (
-    <section className='h-screen'>
-          <Spline scene="https://prod.spline.design/qS6bUQoGN1zbpPsO/scene.splinecode" />
+    <section >
+      <section className='flex items-center h-screen  justify-start '>
+        <div className='mx-2 flex gap-3 top-20 fixed text-white '>
+        <button onClick={openTutorial} className='bg-home gap-2 flex items-center p-3 cursor-pointer rounded-md'>
+          <img src={Tutorial} alt="" />
+          <label className='hidden lg:block'>Tutorial</label>
+        </button>
+        <button className='bg-home gap-2 flex items-center p-3 cursor-pointer rounded-md'>
+          <img src={Settings} alt="" />
+          <label className='hidden lg:block'>Settings</label>
+        </button>  
+        </div>
+        
+        <Spline scene="https://prod.spline.design/qS6bUQoGN1zbpPsO/scene.splinecode?quality=low" />
+        
+      </section>
           
+        
         {tutorial && ( 
           <AnimatePresence>
           <motion.div
@@ -27,7 +48,7 @@ function ClientExplore() {
           exit={{scaleY:0.1, opacity:0}}
           transition={{duration:1, delay:0.2}}
           >
-          <section className='explore-modal-section'>
+          <section className='explore-modal-section z-50'>
             <div className='hidden lg:p-5 rounded-lg lg:gap-y-5 lg:flex lg:flex-col justify-center items-center bg-dark-gray'>
             <label className='text-light-maroon font-semibold text-3xl'>For Desktop</label>
             <div className='grid grid-cols-3 gap-x-5'>
