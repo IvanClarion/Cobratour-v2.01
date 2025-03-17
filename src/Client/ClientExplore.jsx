@@ -6,13 +6,16 @@ import MobileZoom from './Icons/mobile-zoom.svg'
 import PCPanning from './Icons/pc-panning.svg'
 import PCRotate from './Icons/pc-rotate.svg'
 import PCZoom from './Icons/pc-zoom.svg'
-import Settings from './Icons/settings.svg'
+import Building from './Icons/building.svg'
 import Tutorial from './Icons/tutorial.svg'
+import DropDown from './Images/dropdown.svg'
+import ExitModal from './Icons/client-exit-modal.svg'
 import { useState } from 'react';
 import {AnimatePresence, motion} from 'framer-motion'
 function ClientExplore() {
   const [tutorial, setTutorial] = useState(true);
-
+  const [buildingList, setBuildingList] = useState(false);
+  const [buildingListModal, setBuildingListModal] = useState(false);
   const closeTutorial = (e)=>{
     e.stopPropagation();
     setTutorial(false)
@@ -21,18 +24,30 @@ function ClientExplore() {
     e.stopPropagation();
     setTutorial(true)
   }
+  const openBuildingList = (e)=>{
+    e.stopPropagation()
+    setBuildingList(prev=>!prev)
+  }
+  const openBuildingListModal = (e)=>{
+    e.stopPropagation()
+    setBuildingListModal(true)
+  }
+  const closeBuildingListModal = (e)=>{
+    e.stopPropagation()
+    setBuildingListModal(false)
+  }
   return (
-    <section >
+    <section className='image-pixelated'>
       <section className='flex items-center h-screen  justify-start '>
         <div className='mx-2 flex gap-3 top-20 fixed text-white '>
         <button onClick={openTutorial} className='bg-home gap-2 flex items-center p-3 cursor-pointer rounded-md'>
           <img src={Tutorial} alt="" />
-          <label className='hidden lg:block'>Tutorial</label>
-        </button>
-        <button className='bg-home gap-2 flex items-center p-3 cursor-pointer rounded-md'>
-          <img src={Settings} alt="" />
-          <label className='hidden lg:block'>Settings</label>
-        </button>  
+          <p className='hidden lg:block'>Tutorial</p>
+        </button> 
+        <button onClick={openBuildingListModal} className='bg-home gap-2 flex items-center p-3 cursor-pointer rounded-md'>
+          <img src={Building} alt="" />
+          <p className='hidden lg:block'>Facilities</p>
+        </button> 
         </div>
         
         <Spline scene="https://prod.spline.design/qS6bUQoGN1zbpPsO/scene.splinecode?quality=low" />
@@ -43,10 +58,10 @@ function ClientExplore() {
         {tutorial && ( 
           <AnimatePresence>
           <motion.div
-          initial={{scaleY:0.1, opacity:0}}
+          initial={{scaleY:0, opacity:0}}
           animate={{scaleY:1, opacity:1}}
-          exit={{scaleY:0.1, opacity:0}}
-          transition={{duration:1, delay:0.2}}
+          exit={{scaleY:0, opacity:0}}
+          transition={{duration:1}}
           >
           <section className='explore-modal-section z-50'>
             <div className='hidden lg:p-5 rounded-lg lg:gap-y-5 lg:flex lg:flex-col justify-center items-center bg-dark-gray'>
@@ -97,6 +112,36 @@ function ClientExplore() {
           </AnimatePresence>
           )}
           
+          {buildingListModal && (
+          <section className='modal-section break-words z-50'>
+            <div className='building-container'>
+              <div className='flex items-center gap-5'>
+                <img onClick={closeBuildingListModal} src={ExitModal} alt='Exit Modal' className='exit-modal min-w-5 max-w-10' />
+                <label className='text-2xl font-semibold'>Building Facilities</label>
+              </div>
+              <div className='building-list'>
+              <div className='building-list-container'>
+              <article className='flex justify-between items-center'>
+                <label className='lg:text-xl text-md '>Phinma Hall</label> 
+                  <img src={DropDown} alt="" className='min-w-5 max-w-10' onClick={openBuildingList} />
+              </article>
+              <AnimatePresence>
+              {buildingList &&(
+              <motion.div className='building-list-container p-2'
+              initial={{scaleY:0,opacity:0}}
+              animate={{scaleY:1,opacity:1}}
+              exit={{scaleY:0, opacity:0}}
+              transition={{duration:0.3}}
+              >
+              <label className='lg:text-base text-xs'>PH209</label>
+              </motion.div>
+              )}
+              </AnimatePresence>
+              </div>
+              </div>
+            </div>
+          </section>
+          )}
     </section>
   );
 }

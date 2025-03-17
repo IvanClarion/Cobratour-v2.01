@@ -36,11 +36,12 @@ function ClientNavBar() {
           <img src={MenuBar} alt="" className="lg:hidden " onClick={openMenu} />
         )}
       </div>
+      <AnimatePresence>
       {(isMenuBar || !isMobileView) && (
-        <AnimatePresence>
+        
         <motion.div
         initial ={{height:0, opacity:0}}
-        animate = {{height: openMenu?  "auto": 0, opacity: openMenu? 1:0 }}
+        animate = {{height:"auto", opacity: 1 }}
         exit={{height:0, opacity:0}}
         transition={{duration:0.3, ease:easeOut}}
         >
@@ -60,8 +61,9 @@ function ClientNavBar() {
           </li>
         </ul>
         </motion.div>
-        </AnimatePresence>
+        
       )}
+      </AnimatePresence>
     </nav>
   );
 }

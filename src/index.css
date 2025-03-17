@@ -1375,3 +1375,47 @@ input[type="search"]::-webkit-search-cancel-button {
     ;
    }
 }
+@layer components{
+  .building-container{
+    @apply  
+    block
+    justify-start
+    items-start
+    overflow-y-auto
+    p-5
+    w-w-90vw
+    h-v-modal
+    bg-dark-gray
+    rounded-xl
+    gap-5
+    text-white
+
+    ;
+  }
+}
+@layer components{
+  .building-list{
+    @apply
+    
+    grid
+    lg:grid-cols-4
+    my-5
+    grid-cols-2
+    ;
+  }
+}
+@layer components{
+  .building-list-container{
+  @apply
+  flex
+  flex-col
+  bg-home
+  p-5
+  gap-y-5
+  rounded-sm
+  border-l-2
+  border-l-light-maroon
+  break-words
+  ;
+  }
+}
