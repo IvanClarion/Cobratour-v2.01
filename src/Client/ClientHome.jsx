@@ -163,11 +163,9 @@ function ClientHome() {
           </span>
         </div>
         <div className='footer-socials'>
-        <label className='text-2xl font-semibold'>Socials</label>
+        <label className='text-2xl font-bold'>Version</label>
         <span className='flex justify-center flex-row gap-5 '>
-        <img src={SocialFacebook} alt="facebook" className='size-9 pb-2' />
-        <img src={SocialInstagram} alt="Instagram"className='size-10 pb-2' />
-        <img src={SocialWebsite} alt="Website" className='size-10 pb-2' />
+        <label className='font-semibold'>Version 2.0</label>
         </span>
         </div>
       </footer>

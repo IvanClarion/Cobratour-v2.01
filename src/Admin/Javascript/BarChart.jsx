@@ -56,7 +56,7 @@ const BarChart = () => {
                 labels: ['Very Satisfied', 'Satisfied', 'Neutral', 'Not Satisfied', 'Not Very Satisfied'],
                 datasets: [
                     {
-                        label: 'Location Feedback',
+                        label: 'User Satisfaction',
                         data: [
                             satisfactionCounts["Very Satisfied"],
                             satisfactionCounts["Satisfied"],

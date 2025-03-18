@@ -22,7 +22,7 @@ function ControlNavbar() {
 
   return (
     
-      <aside className='lg:z-auto z-10'>
+      <aside >
         
         {isMobileView && (
           <div className="general-nav" onClick={() => setOpenNav((prev) => !prev)}>
@@ -34,7 +34,7 @@ function ControlNavbar() {
         {(openNav || !isMobileView) && (
           
           
-            <nav className="admin-navbar">
+            <nav className="admin-navbar z-10">
               <ul className="admin-ul">
                 <img src={AdminLogo} alt="logo" className="p-2" />
 
