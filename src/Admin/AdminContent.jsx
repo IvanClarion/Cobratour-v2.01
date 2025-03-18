@@ -288,7 +288,7 @@ function AdminContent() {
                 {/* Delete Warning Modal */}
                 {deleteModal && (
                     <section id="warning-modal" className="modal-section" onClick={closeDeleteModal}>
-                        <div className="modal-content justify-center items-center lg:size-3/5" onClick={(e) => e.stopPropagation()}>
+                        <div className="modal-content justify-center items-center w-w-90vw h-v-modal lg:size-3/5" onClick={(e) => e.stopPropagation()}>
                             <span className="flex flex-col items-center">
                                 <img src={AdminWarning} alt="Warning" className="w-36" />
                                 <h1 className="font-bold text-2xl">WARNING!</h1>
@@ -334,7 +334,7 @@ function AdminContent() {
                 {/* Edit Content Modal */}
                 {editModal && (
                     <section id="content-modal" className="modal-section" onClick={closeEditModal}>
-                        <div className="modal-content size-3/5" onClick={(e) => e.stopPropagation()}>
+                        <div className="modal-content h-v-modal w-w-90vw lg:size-3/5" onClick={(e) => e.stopPropagation()}>
                             <span className="flex flex-col w-full justify-end items-center">    
                             <img src={editContent.image} className="h-full" alt="Content" style={{ objectFit: 'cover' }} />
                                 <label htmlFor="edit-file-input" className="modal-change-button cursor-pointer">Change Image</label>
@@ -357,12 +357,12 @@ function AdminContent() {
                 {/* Confirm Delete Modal */}
                 {confirmDeleteModal && (
                     <section id="confirm-delete-modal" className="modal-section" onClick={() => setConfirmDeleteModal(false)}>
-                        <div className="modal-content justify-center items-center size-3/5" onClick={(e) => e.stopPropagation()}>
-                            <span className="flex flex-col items-center">
+                        <div className="modal-content justify-center items-center w-w-90vw h-v-modal lg:size-3/5" onClick={(e) => e.stopPropagation()}>
+                            <span className="flex flex-col text-center items-center">
                                 <img src={AdminWarning} alt="Warning" className="w-36" />
                                 <h1 className="font-bold text-2xl">WARNING!</h1>
                                 <label>ARE YOU SURE YOU WANT TO DELETE THIS CONTENT?</label>
-                                <div className="grid grid-cols-2 gap-4 mt-4">
+                                <div className="grid grid-cols-2 gap-4 size-full mt-4">
                                     <button className="input-remove" onClick={handleDeleteContent}>Yes</button>
                                     <button className="input-submit" onClick={() => setConfirmDeleteModal(false)}>No</button>
                                 </div>

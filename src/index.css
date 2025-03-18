@@ -371,7 +371,7 @@ body{
     top-0
     left-0
     overflow-hidden
-    
+    z-20
     ;
   }
 }
@@ -385,6 +385,7 @@ body{
     bg-maroon-custom
     font-semibold
     rounded-md
+    relative
     ;
   }
 }
