@@ -34,7 +34,7 @@ function ControlNavbar() {
         {(openNav || !isMobileView) && (
           
           
-            <nav className="admin-navbar z-10">
+            <nav className="admin-navbar">
               <ul className="admin-ul">
                 <img src={AdminLogo} alt="logo" className="p-2" />
 
