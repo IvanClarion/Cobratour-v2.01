@@ -266,7 +266,7 @@ function ControlDashboard() {
           {/* Add Contributors Modal */}
           {controlModal && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-              <section className="modal-section z-20 overflow-hidden">
+              <section className="modal-section break-all z-20 overflow-hidden">
                 <div className="modal-control">
                   <img src={ControlAdd} alt="" className="min-w-72 max-w-80 " />
                   <label className="text-2xl font-semibold">Add Contributor</label>
@@ -294,7 +294,7 @@ function ControlDashboard() {
           )}
 
           {/* History List */}
-          <div className="control-contents h-72">
+          <div className="control-contents break-words h-72">
             <div className="flex justify-center text-center">
               <label className="text-xl font-bold mt-5">History</label>
             </div>
@@ -310,9 +310,9 @@ function ControlDashboard() {
             </div>
             {filteredHistory.map((contributor, index) => (
               <div key={index} className="control-account-list justify-between" onClick={() => openHistoryModal(contributor)}>
-                <div className="flex items-center gap-x-5">
+                <div className="flex items-center break-words gap-x-5">
                   <img src={HistoryIcon} alt="" />
-                  <label>{contributor.email}</label>
+                  <label className='break-all'>{contributor.email}</label>
                 </div>
                 <div className="flex flex-col items-center justify-stretch text-center mx-1">
                   <StatusHistory status={contributor.status} />
@@ -409,12 +409,12 @@ function ControlDashboard() {
         {/* History Modal */}
         {historyModal && selectedContributor && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-            <section className="modal-section z-20 overflow-hidden">
-              <div className="modal-control">
+            <section className="modal-section break-all z-20 overflow-hidden">
+              <div className="modal-control break-all">
                 <img src={HistoryModal} alt="" className="size-64" />
                 <label className="text-2xl font-semibold">History</label>
-                <article className="grid grid-cols-2 text-sm lg:text-xl lg:grid-cols-3 size-full justify-evenly break-before-all items-start">
-                  <ul className="flex flex-col items-center">
+                <article className="grid grid-cols-2 break-all text-sm lg:text-xl lg:grid-cols-3 size-full justify-evenly break-before-all items-start">
+                  <ul className="flex flex-col break-all items-center">
                     <label className="font-semibold text-lg">Date</label>
                     <li>{selectedContributor.date}</li>
                   </ul>
