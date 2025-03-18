@@ -117,9 +117,9 @@ function ClientGallery() {
                   transition={{ duration: 0.2 }}
                 >
                   
-                  <div className="aspect-video overflow-hidden flex items-center">
+                  <div className=" overflow-hidden flex items-center">
                   
-                    <img src={selectedLocation.Image} alt={selectedLocation.Name}   />
+                    <img src={selectedLocation.Image} alt={selectedLocation.Name} className='lg:h-svh lg:w-svw'   />
                     
                   </div>
                   <div className="flex my-2 lg:my-5 flex-col justify-start size-full">
@@ -128,7 +128,7 @@ function ClientGallery() {
                       <div className='exit-modal' onClick={closeModal}>
                         <img src={ExitModal} alt='Exit Modal' className='min-w-5 max-w-10' />
                       </div>
-                      <label className="text-3xl m-3 font-bold uppercase">
+                      <label className="text-xl lg:text-3xl  m-3 font-bold uppercase">
                         {selectedLocation.Name}
                       </label>
                     </div>

@@ -25,6 +25,10 @@ function ClientHome() {
            e.stopPropagation()
            setChatBot(false)
        }
+    const footerYear = ()=>{
+      const year = new Date().getFullYear();
+      return year;
+    }
   return (
     <motion.div
     initial={{y:10, opacity:0}}
@@ -100,7 +104,7 @@ function ClientHome() {
         <label className='text-6xl font-bold'>FAQs</label>
           <div className='faq-faqs-container'>
             <div className='flex items-center justify-between'>
-            <p className='text-lg'>Does COBRATOUR provide real-time navigation?</p>
+            <p className='text-lg'>How do I search for a building or facility?</p>
             <motion.div
               initial={{rotate:0, opacity:1}}
               animate={{rotate: faq? 180:0}}
@@ -126,7 +130,7 @@ function ClientHome() {
               animate={{opacity: faq? 1: 0, y: faq? 0:-10}}
               transition={{duration:0.3, ease:"easeInOut",delay: faq? 0.2:0}}
             >
-            <p className='lg:pr-6 duration-300 '>Simply locate your desired building on the three dimensional map through the Explore/Explore the campus section or enter the name of the building or facility in the search bar through the Gallery section to get its information or details.</p>
+            <p className='lg:pr-6 duration-300 '>Simply locate your desired building on the three dimensional map through the Explore the campus section or enter the name of the building or facility in the search bar through the Gallery section to get its information or details.</p>
             </motion.p>
             </span>
             </motion.div>
@@ -165,8 +169,9 @@ function ClientHome() {
         <div className='footer-socials'>
         <label className='text-2xl font-bold'>Version</label>
         <span className='flex justify-center flex-row gap-5 '>
-        <label className='font-semibold'>Version 2.0</label>
+        <label className='font-semibold text-light-maroon'>Version 3.0</label>
         </span>
+        <label className='text-xs'>CobraTour All rights reserved @{footerYear()}</label>
         </div>
       </footer>
       
