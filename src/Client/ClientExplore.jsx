@@ -119,6 +119,10 @@ function ClientExplore() {
                 <img onClick={closeBuildingListModal} src={ExitModal} alt='Exit Modal' className='exit-modal min-w-5 max-w-10' />
                 <label className='text-2xl font-semibold'>Building Facilities</label>
               </div>
+              <div className='flex flex-col gap-y-2 items-center justify-center font-semibold h-full text-3xl text-center'>
+              This feature will be coming soon in <span className='text-light-maroon'>Version 2.2</span>
+              </div>
+              {/*
               <div className='building-list'>
               <div className='building-list-container'>
               <article className='flex justify-between items-center'>
@@ -139,6 +143,7 @@ function ClientExplore() {
               </AnimatePresence>
               </div>
               </div>
+              */}
             </div>
           </section>
           )}

@@ -378,7 +378,7 @@ body{
 @layer components{
   .modal-change-button{
     @apply
-    absolute 
+    
     text-white
     my-2
     p-2
