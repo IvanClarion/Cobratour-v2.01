@@ -169,7 +169,7 @@ function ClientHome() {
         <div className='footer-socials'>
         <label className='text-2xl font-bold'>Version</label>
         <span className='flex justify-center flex-row gap-5 '>
-        <label className='font-semibold text-light-maroon'>Version 3.0</label>
+        <label className='font-semibold text-light-maroon'>Version 2.1</label>
         </span>
         <label className='text-xs'>CobraTour All rights reserved @{footerYear()}</label>
         </div>
