@@ -1381,7 +1381,6 @@ input[type="search"]::-webkit-search-cancel-button {
 @layer components{
   .building-container{
     @apply  
-    block
     justify-start
     items-start
     overflow-y-auto
@@ -1400,10 +1399,11 @@ input[type="search"]::-webkit-search-cancel-button {
   .building-list{
     @apply
     
-    grid
-    lg:grid-cols-4
+    flex
+    flex-col
+    gap-5
     my-5
-    grid-cols-2
+    
     ;
   }
 }
@@ -1416,9 +1416,110 @@ input[type="search"]::-webkit-search-cancel-button {
   p-5
   gap-y-5
   rounded-sm
-  border-l-2
+  border-l-4
   border-l-light-maroon
   break-words
+  text-center
   ;
+  }
+}
+@layer components{
+  .building-list-container2{
+  @apply
+  
+  bg-bg-gray-v2
+  p-5
+  gap-y-5
+  rounded-sm
+  break-words
+  ;
+  }
+}
+@layer components{
+  .faci-modal-container{
+    @apply
+    flex
+    flex-col
+    items-center
+    bg-white
+    p-5
+    lg:w-500
+    w-w-90vw
+    rounded-xl
+    h-v-modal
+    overflow-y-auto
+    gap-y-5
+    relative
+    break-words
+    ;
+  }
+}
+@layer components{
+  .faci-modal-container form{
+    @apply
+    flex
+    flex-col
+    size-full
+    gap-y-3
+    ;
+  }
+}
+@layer components{
+  .faci-modal-container form input{
+    @apply
+    p-2
+    border
+    border-black
+    rounded-lg
+    ;
+  }
+}
+@layer components{
+  .faci-button-remove{
+    @apply
+    bg-admin-hovergray
+    p-2
+    text-maroon-custom
+    rounded-lg
+    ;
+  }
+}
+@layer components{
+  .faci-button-save{
+    @apply
+    bg-maroon-custom
+    p-2
+    text-white
+    rounded-lg
+    ;
+  }
+}
+@layer components{
+  .faci-list-section{
+    @apply
+    grid
+    lg:grid-cols-3
+    md:grid-cols-2
+    grid-cols-1
+    gap-5
+    ;
+
+  }
+}
+@layer components{
+  .faci-list-container{
+    @apply
+    flex
+    flex-row
+    bg-admin-navgray
+    p-5
+    h-20
+    shadow-box-contain
+    rounded-xl
+    items-center
+    gap-2
+    cursor-pointer
+    ;
+
   }
 }

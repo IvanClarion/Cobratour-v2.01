@@ -9,7 +9,8 @@
     import AccountIcon from './AdminIcons/Account.svg';
     import LogoutIcon from './AdminIcons/logout.svg';
     import HamburgerIcon from "./AdminIcons/hamburger.svg";
-
+    import Building from './AdminIcons/building.svg';
+    import Stats from './AdminIcons/stats.svg';
     const AdminNavBar = () => {
         const [activeItem, setActiveItem] = useState(null);
         const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 1023);
@@ -54,8 +55,8 @@
                                 onClick={() => handleClick('dashboard')}
                             >
                                 <Link to="/adminDashboard" className="flex items-center gap-1">
-                                    <img src={DashboardIcon} alt="Dashboard" className="w-5" />
-                                    Dashboard
+                                    <img src={Stats} alt="Dashboard" className="w-5" />
+                                    Statistics
                                 </Link>
                             </li>
                             <li 
@@ -63,10 +64,20 @@
                                 onClick={() => handleClick('content')}
                             >
                                 <Link to="/adminContent" className="flex items-center gap-1">
-                                    <img src={ContentIcon} alt="Content" className="w-5" />
+                                    <img src={DashboardIcon} alt="Content" className="w-5" />
                                     Content
                                 </Link>
                             </li>
+                            <li 
+                                className={`p-2 flex items-center gap-1 rounded-2xl hover:bg-admin-hovergray duration-300 ${activeItem === 'facilities' ? 'bg-admin-hovergray' : ''}`}
+                                onClick={() => handleClick('facilities')}
+                            >
+                                <Link to="/adminFacilities" className="flex items-center gap-1">
+                                    <img src={Building} alt="Facilities" className="w-5" />
+                                    Facilities
+                                </Link>
+                            </li>
+                            
                             <li 
                                 className={`p-2 flex items-center gap-1 rounded-2xl hover:bg-admin-hovergray duration-300 ${activeItem === 'account' ? 'bg-admin-hovergray' : ''}`}
                                 onClick={() => handleClick('account')}

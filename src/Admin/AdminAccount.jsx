@@ -1,4 +1,4 @@
-import SampleProfile from './AdminImages/ivan.jpeg'
+import ControlTotal from '../ControlAdmin/AdminIcons/control-total.svg';
 import { useState, useEffect } from 'react'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import eye icons
 import { db, auth } from '../config/firebase'; // Import Firestore instance and auth
@@ -97,7 +97,7 @@ function AdminAccount() {
         <section className="flex flex-col lg:flex-row justify-between items-center py-5 gap-5">
           <span className='flex items-center gap-5'>
             <div className='profile-container'>
-              <img src={SampleProfile} alt="Profile" />
+              <img src={ControlTotal} alt="Profile" />
             </div>
             <span className='flex flex-col gap-2'>
               <h1 className='profile-label'>{contributor.name || 'Sample Name'}</h1>

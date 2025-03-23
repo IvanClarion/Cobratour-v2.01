@@ -16,7 +16,7 @@ import ControlNavBar from './ControlAdmin/ControlNavbar';
 import ControlDashboard from './ControlAdmin/ControlDashboard';
 import ControlAccount from './ControlAdmin/ControlAccount';
 import ControlLogin from './ControlAdmin/ControlLogin';
-
+import AdminFacilities from './Admin/AdminFacilities';
 import ProtectedRoute from './PrivateRoute';
 import ControlSecurity from './PrivateRoutingControl'
 import LoadingAnimation from './LoadingAnimation';
@@ -78,6 +78,7 @@ function App() {
             {/* Admin Routes (Protected) */}
             <Route element={<ProtectedRoute />}>
               <Route path="/adminDashboard" element={<AdminDashboard />} />
+              <Route path="/adminFacilities" element={<AdminFacilities />} />
               <Route path="/adminContent" element={<AdminContent />} />
               <Route path="/adminAccount" element={<AdminAccount />} />
             </Route>
