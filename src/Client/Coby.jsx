@@ -20,7 +20,7 @@ function Coby() {
         <section className='modal-section  gap-2 justify-center items-start'>
         <div className='flex h-full items-start my-5 gap-2'>
             
-            <iframe src='https://cory-269045.zapier.app'
+            <iframe src='https://www.chatbase.co/chatbot-iframe/SdaUBpJBQJboAR4AidZ38'
             style={{height:'90%', width:'350px', borderRadius:'20px'}}
            
             />

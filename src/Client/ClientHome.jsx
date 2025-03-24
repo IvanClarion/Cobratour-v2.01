@@ -51,7 +51,7 @@ function ClientHome() {
                <section className='modal-section  z-50 gap-2 justify-center items-start'>
                <div className='flex h-full items-start my-5 gap-2'>
                     <img src={ExitModal} alt="" className='exit-modal2' onClick={closeChatBot} />
-                   <iframe src='https://interfaces.zapier.com/embed/chatbot/cm7sstze8000tivebfpax0y8v'
+                   <iframe src='https://www.chatbase.co/chatbot-iframe/SdaUBpJBQJboAR4AidZ38'
                    style={{height:'90%', width:'350px', borderRadius:'20px'}}
                    />
                   
