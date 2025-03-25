@@ -305,6 +305,16 @@ function AdminContent() {
                 {addModal && (
                     <section id="add-modal" className="modal-section" onClick={closeAddModal}>
                         <div className="modal-content h-v-modal mx-4 lg:size-3/5" onClick={(e) => e.stopPropagation()}>
+                        <div className='grid grid-cols-2 w-full  overflow-y-scroll h-v-modal gap-2'>
+                            <span className="flex flex-col overflow-hidden w-full lg:size-full lg:h-full justify-center items-center border-dashed border-2 m-1 rounded-3xl border-maroon-custom">
+                                {newContent.image ? (
+                                    <img src={newContent.image} className="h-50" alt="Selected" style={{ objectFit: 'fit' }} />
+                                ) : (
+                                    <img src={AdminContentInsert} className="h-50 w-32 object-cover rounded-lg" alt="Content" style={{ objectFit: 'cover' }} />
+                                )}
+                                <label htmlFor="file-input" className="modal-add-button cursor-pointer absolute">Add Image</label>
+                                <input id="file-input" type="file" accept="image/*" className="hidden" onChange={handleImageChange} />
+                            </span>
                             <span className="flex flex-col overflow-hidden w-full lg:size-full justify-center items-center border-dashed border-2 m-1 rounded-3xl border-maroon-custom">
                                 {newContent.image ? (
                                     <img src={newContent.image} className="h-50" alt="Selected" style={{ objectFit: 'fit' }} />
@@ -314,6 +324,16 @@ function AdminContent() {
                                 <label htmlFor="file-input" className="modal-add-button cursor-pointer absolute">Add Image</label>
                                 <input id="file-input" type="file" accept="image/*" className="hidden" onChange={handleImageChange} />
                             </span>
+                            <span className="flex flex-col overflow-hidden w-full lg:size-full justify-center items-center border-dashed border-2 m-1 rounded-3xl border-maroon-custom">
+                                {newContent.image ? (
+                                    <img src={newContent.image} className="h-50" alt="Selected" style={{ objectFit: 'fit' }} />
+                                ) : (
+                                    <img src={AdminContentInsert} className="h-50 w-32 object-cover rounded-lg" alt="Content" style={{ objectFit: 'cover' }} />
+                                )}
+                                <label htmlFor="file-input" className="modal-add-button cursor-pointer absolute">Add Image</label>
+                                <input id="file-input" type="file" accept="image/*" className="hidden" onChange={handleImageChange} />
+                            </span>
+                            </div>
                             <form className="flex flex-col gap-1 p-2 size-full" onSubmit={handleAddContent}>
                                 <label className="font-semibold text-2xl">Add Content</label>
                                 <label>Name:</label>
