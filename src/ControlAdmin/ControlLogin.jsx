@@ -82,11 +82,11 @@ function ControlLogin() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
-                <div className="relative">
+                <div className="relative login-input">
                   <input
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"
-                    className="login-input"
+                    className="bg-transparent outline-none border-none"
                     onChange={(e) => setPassword(e.target.value)}
                     required
                   />
